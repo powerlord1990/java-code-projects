@@ -10,7 +10,6 @@ public class Main {
         Filter toUpperCaseFilter = o -> ((String) o).toUpperCase();
 
         String[] result = ArrayFilter.filter(strings, toUpperCaseFilter);
-
         for (String s : result) {
             System.out.println(s);
         }
