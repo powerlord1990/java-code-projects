@@ -1,4 +1,4 @@
-package javacode.projects.task3;
+package javacode.projects.collections.task2;
 
 import java.util.HashMap;
 import java.util.List;

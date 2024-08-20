@@ -1,4 +1,4 @@
-package javacode.projects.task2;
+package javacode.projects.collections.task1;
 
 
 public class Main {

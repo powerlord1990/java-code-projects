@@ -1,4 +1,4 @@
-package javacode.projects.task1;
+package javacode.projects.core.task1;
 
 import java.util.LinkedList;
 import java.util.List;
