@@ -18,7 +18,7 @@ public class Main {
                 .flatMap(student -> student.getGrades().entrySet().stream())
                 .collect(Collectors.groupingBy(
                         Map.Entry::getKey,
-                        Collectors.summingDouble(Map.Entry::getValue)
+                        Collectors.averagingDouble(Map.Entry::getValue)
                 ));
 
         collect.forEach((discipline, avg)-> System.out.println("discipline - "+ discipline +", avg grade - " +avg));
