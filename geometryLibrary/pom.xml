@@ -6,8 +6,8 @@
 
     <groupId>com.company</groupId>
     <artifactId>geometryLibrary</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-
+    <version>1.1.0-SNAPSHOT</version>
+<!--делаем вид что выкатили крутую обнову и теперь у нас все с блекжеком -->
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
