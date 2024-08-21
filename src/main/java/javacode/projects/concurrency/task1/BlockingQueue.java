@@ -25,7 +25,7 @@ public class BlockingQueue<T>{
             wait();
         }
         T item = queue.poll();
-        notify();
+        notifyAll();
         return item;
     }
 

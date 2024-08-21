@@ -3,7 +3,11 @@ package javacode.projects.concurrency.task2;
 
 public class BankAccount {
     private final int accountNumber;
+
     private double balance;
+    public int getAccountNumber() {
+        return accountNumber;
+    }
 
     public BankAccount(int accountNumber, double initialBalance) {
         this.accountNumber = accountNumber;

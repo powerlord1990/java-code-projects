@@ -8,9 +8,6 @@ public class ConcurrentBank {
     public ConcurrentBank() {
     }
 
-    public double getTotalBankBalance() {
-        return getTotalBalance();
-    }
 
     public BankAccount createAccount(double initialBalance) {
         BankAccount newAccount = new BankAccount(nextAccountNumber++, initialBalance);
@@ -20,8 +17,17 @@ public class ConcurrentBank {
 
 
     void transfer(BankAccount sender, BankAccount receiver, Integer amount) {
-        synchronized (sender) {
-            synchronized (receiver) {
+        Object firstLock;
+        Object secondLock;
+        if (sender.getAccountNumber() < receiver.getAccountNumber()) {
+            firstLock = sender;
+            secondLock = receiver;
+        } else {
+            firstLock = receiver;
+            secondLock = sender;
+        }
+        synchronized (firstLock) {
+            synchronized (secondLock) {
                 if (sender.withdraw(amount)) {
                     receiver.deposit(amount);
                     System.out.println("Transfer is completed.");
