@@ -1,6 +1,8 @@
 package javacode.projects.concurrency.task2;
 
 
+import java.util.Objects;
+
 public class BankAccount {
     private final int accountNumber;
 
@@ -32,4 +34,16 @@ public class BankAccount {
         return balance;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BankAccount that = (BankAccount) o;
+        return accountNumber == that.accountNumber && Double.compare(that.balance, balance) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(accountNumber, balance);
+    }
 }
